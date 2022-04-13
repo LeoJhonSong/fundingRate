@@ -1,6 +1,5 @@
 # %%
 import logging
-import os
 
 import pandas as pd
 import requests
@@ -10,9 +9,6 @@ logging.basicConfig(level=logging.INFO)
 
 with open('config.yaml') as f:
     tasks = yaml.safe_load(f)
-
-os.environ['http_proxy'] = 'http://127.0.0.1:7890'
-os.environ['https_proxy'] = 'http://127.0.0.1:7890'
 
 writer = pd.ExcelWriter('fundingRate.xlsx', engine='xlsxwriter')
 
